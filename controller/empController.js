@@ -39,24 +39,4 @@ async function putPost(id, data) {
 }
 
 
- function login(data) {
-     
-         empModel.findOne({ email: email }, (err, data) => {
-            if (err) {
-            console.log("err occur")
-            //   return  ({ "err": 1, "msg": "Email is not correct" })
-            }
-            else if (data == null) {
-                console.log("No data found")
-            //    return  ({ "err": 1, "msg": "Email is not correct" })
-            }
-            else {
-                console.log("mail correct")
-            //    return ({ "err": 0, "msg": "Login Success", "token": token })
-            }
-        })
-        console.log(data)
-    
-}
-
-module.exports = { getPost, addPost, deletePost, putPost, login };
+module.exports = { getPost, addPost, deletePost, putPost  };

@@ -1,4 +1,4 @@
-const { getPost, addPost, deletePost, putPost, login } = require('../controller/empController')
+const { getPost, addPost, deletePost, putPost  } = require('../controller/empController')
 const express = require('express')
 const router = express.Router();
 
@@ -65,14 +65,6 @@ router.put("/updatepost/:id", body('email').isEmail(),
     res.send("Data updated")
   })
 
-router.post("/login", (req, res) => {
-  let email = req.body.email
-  let payload = {
-    uid: email
-  }
-  const token = jwt.sign(payload, jwtSecret, { expiresIn: 360000 })
-  res.send({ "err": 0, "msg": "Login Success", "token": token })
-  login(req.body)
-})
+
 
 module.exports = router;
